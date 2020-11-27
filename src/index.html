@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Desoftech</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="//fonts.googleapis.com/css?family=IM+Fell+English:400,400italic|Open+Sans:300,400" rel="stylesheet"
+    type="text/css">
+  <link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+  <!---strat-slider---->
+  <link rel="stylesheet" type="text/css" href="/assets/css/slider.css" />
+  <script type="text/javascript" src="/assets/js/modernizr.custom.28468.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.cslider.js"></script>
+  <script type="text/javascript">
+    $(function () {
+
+      $('#da-slider').cslider({
+        autoplay: true,
+        bgincrement: 500
+      });
+
+    });
+  </script>
+  <!-- start gallery_sale -->
+  <script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.mixitup.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+
+      var filterList = {
+
+        init: function () {
+
+          // MixItUp plugin
+          // http://mixitup.io
+          $('#portfoliolist').mixitup({
+            targetSelector: '.portfolio',
+            filterSelector: '.filter',
+            effects: ['fade'],
+            easing: 'snap',
+            // call the hover effect
+            onMixEnd: filterList.hoverEffect()
+          });
+
+        },
+
+        hoverEffect: function () {
+
+          // Simple parallax effect
+          $('#portfoliolist .portfolio').hover(
+            function () {
+              $(this).find('.label').stop().animate({ bottom: 0 }, 200, 'easeOutQuad');
+              $(this).find('img').stop().animate({ top: -30 }, 500, 'easeOutQuad');
+            },
+            function () {
+              $(this).find('.label').stop().animate({ bottom: -40 }, 200, 'easeInQuad');
+              $(this).find('img').stop().animate({ top: 0 }, 300, 'easeOutQuad');
+            }
+          );
+
+        }
+
+      };
+
+      // Run the show!
+      filterList.init();
+    });	
+  </script>
+</head>
+<body>
+<!-- start header -->
+<div class="header_bg">
+  <div class="wrap">
+    <div class="header">
+      <div class="logo">
+        <a href="index.html"><img src="/assets/images/logo.png" alt="" /> </a>
+      </div>
+      <div class="social-icons">
+        <ul>
+          <li><a href="#" target="_blank"></a></li>
+          <li><a href="#" target="_blank"></a></li>
+        </ul>
+      </div>
+      <div class="h_menu">
+        <ul>
+          <li class="active"><a href="inicio"routerLink="inicio">Inicio</a></li>
+          <li><a href="portafolio"routerLink="portafolio">Portafolio</a></li>
+          <li><a href="servicios"routerLink="servicios">Servicios</a></li>
+          <li><a href="contacto"routerLink="contacto">Contact</a></li>
+        </ul>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>
+  <app-root></app-root>
+  <!-- start footer -->
+  <div class="footer_bg">
+    <div class="wrap">
+      <div class="footer">
+        <div class="soc-icons">
+          <ul>
+            <li><a href="#" target="_blank"></a></li>
+            <li><a href="#" target="_blank"></a></li>
+            <li><a href="#" target="_blank"></a></li>
+            <li><a href="#" target="_blank"></a></li>
+            <li><a href="#" target="_blank"></a></li>
+            <li><a href="#" target="_blank"></a></li>
+          </ul>
+        </div>
+        <div class="copy">
+          <p class="link"><span>&copy; All rights reserved | Template by&nbsp;<a href="http://w3layouts.com/">
+                W3Layouts</a></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

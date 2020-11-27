@@ -1,0 +1,17 @@
+<table class="table table-striped">
+    <thead>
+        <tr>ID</tr>
+        <tr>Name</tr>
+        <tr>Email</tr>
+        <tr>Telefono</tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mydata of data[0]">
+            <td>{{mydata.Id}} </td>
+            <td>{{mydata.firstname}} </td>
+            <td>{{mydata.email}} </td>
+            <td>{{mydata.mobile}} </td>
+            <td><button class="btn btn-danger" (click)="deleteuser(mydata.Id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
